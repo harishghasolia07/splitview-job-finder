@@ -3,7 +3,7 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Job } from '@/data/jobs';
-import { MapPin, Briefcase, Clock } from 'lucide-react';
+import { MapPin, Briefcase, Clock, Star } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface JobDetailProps {
@@ -24,7 +24,15 @@ const JobDetail: React.FC<JobDetailProps> = ({ job }) => {
       <div className="flex-none p-6 border-b">
         <h2 className="text-2xl font-bold mb-2">{job.title}</h2>
         <div className="flex flex-col gap-2 mb-4">
-          <div className="text-lg">{job.company}</div>
+          <div className="flex items-center justify-between">
+            <div className="text-lg">{job.company}</div>
+            {job.rating !== undefined && (
+              <div className="flex items-center">
+                <Star className="w-4 h-4 text-yellow-500 mr-1" />
+                <span>{job.rating}</span>
+              </div>
+            )}
+          </div>
           <div className="flex items-center text-gray-600">
             <MapPin className="w-4 h-4 mr-2" />
             {job.location}
@@ -37,7 +45,7 @@ const JobDetail: React.FC<JobDetailProps> = ({ job }) => {
           </div>
           {job.payRate && (
             <div className="flex items-center text-gray-700 bg-gray-100 px-3 py-1 rounded-full">
-              ${job.payRate}
+              {job.payRate}
             </div>
           )}
           <div className="flex items-center text-gray-700 bg-gray-100 px-3 py-1 rounded-full">
@@ -70,7 +78,10 @@ const JobDetail: React.FC<JobDetailProps> = ({ job }) => {
       </ScrollArea>
       
       <div className="flex-none p-6 border-t">
-        <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-700">
+        <Button 
+          size="lg" 
+          className={job.quickApply ? "w-full bg-fuchsia-600 hover:bg-fuchsia-700" : "w-full bg-blue-600 hover:bg-blue-700"}
+        >
           {job.quickApply ? "Quick Apply" : "Apply Now"}
         </Button>
       </div>

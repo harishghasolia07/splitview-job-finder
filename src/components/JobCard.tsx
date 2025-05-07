@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Star } from 'lucide-react';
+import { Star, Share2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Job } from '@/data/jobs';
 
@@ -35,18 +35,19 @@ const JobCard: React.FC<JobCardProps> = ({ job, isSelected, onClick }) => {
             <span className="text-sm font-medium text-gray-800">{job.payRate}</span>
           )}
         </div>
-        <div className="flex items-center">
-          {job.quickApply && (
-            <span className="text-xs bg-blue-100 text-blue-800 rounded-full px-2 py-1">
-              Quick Apply
-            </span>
-          )}
-          {job.rating && (
-            <div className="flex items-center ml-2 text-sm">
-              <Star className="w-4 h-4 text-yellow-500 mr-1" />
-              <span>{job.rating}</span>
-            </div>
-          )}
+        <div className="flex items-center space-x-2">
+          <span className={cn(
+            "text-xs rounded-full px-2 py-1",
+            job.quickApply 
+              ? "bg-blue-100 text-blue-800" 
+              : "bg-gray-100 text-gray-800"
+          )}>
+            {job.quickApply ? "Quick Apply" : "Apply Now"}
+          </span>
+          <div className="flex items-center text-sm">
+            <Star className="w-4 h-4 text-yellow-500 mr-1" />
+            <span>{job.rating || "N/A"}</span>
+          </div>
         </div>
       </div>
     </div>

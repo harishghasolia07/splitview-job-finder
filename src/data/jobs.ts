@@ -50,6 +50,7 @@ export const jobsData: Job[] = [
     type: "Full-time",
     postedDays: "2d",
     quickApply: true,
+    rating: 4.1,
     description: "Join our engineering team at DataFlow Systems to build robust server-side applications and APIs. You'll be developing scalable solutions that power our data processing platform used by Fortune 500 companies.\n\nWe're looking for someone who understands distributed systems, has experience with cloud infrastructure, and can write clean, maintainable code that performs well under high load conditions.",
     qualifications: ["Node.js", "Python", "AWS", "Database Design", "Microservices"]
   },
@@ -58,6 +59,7 @@ export const jobsData: Job[] = [
     title: "Product Manager",
     company: "InnovateTech",
     location: "Chicago, IL",
+    payRate: "$75-85/hr",
     type: "Full-time",
     postedDays: "7d",
     quickApply: false,
@@ -87,6 +89,7 @@ export const jobsData: Job[] = [
     type: "Remote",
     postedDays: "4d",
     quickApply: false,
+    rating: 4.3,
     description: "AnalyticsAI is expanding our data science team to develop advanced machine learning models for our predictive analytics platform. In this role, you'll analyze complex datasets, develop algorithms, and translate business problems into data-driven solutions.\n\nWe're looking for someone with strong statistical knowledge, programming skills, and the ability to communicate technical concepts to non-technical stakeholders. This position offers the opportunity to work with cutting-edge technologies and contribute to solving real-world problems.",
     qualifications: ["Machine Learning", "Python", "SQL", "Data Visualization", "Statistical Analysis"]
   },
@@ -99,6 +102,7 @@ export const jobsData: Job[] = [
     type: "Part-time",
     postedDays: "9d",
     quickApply: true,
+    rating: 3.8,
     description: "Documentation Pros is hiring a Technical Writer to create clear, concise, and comprehensive documentation for software products. You'll work with developers and product managers to understand complex systems and translate technical information into user-friendly guides, tutorials, and API documentation.\n\nThe ideal candidate has excellent writing skills, technical aptitude, and the ability to present information in a way that meets the needs of different audience types, from developers to end users.",
     qualifications: ["Technical Writing", "API Documentation", "Markdown", "Information Architecture", "Editing"]
   },
