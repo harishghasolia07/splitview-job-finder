@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import JobCard from './JobCard';
 import JobDetail from './JobDetail';
@@ -26,9 +25,13 @@ const JobListingApp: React.FC = () => {
       return;
     }
     
+    const lowercasedQuery = query.toLowerCase();
     const filteredJobs = jobsData.filter(job => 
-      job.location.toLowerCase().includes(query.toLowerCase())
+      job.title.toLowerCase().includes(lowercasedQuery) || 
+      job.company.toLowerCase().includes(lowercasedQuery) ||
+      job.location.toLowerCase().includes(lowercasedQuery)
     );
+    
     setJobs(filteredJobs);
     
     if (filteredJobs.length > 0) {
