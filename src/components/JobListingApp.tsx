@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import JobCard from './JobCard';
 import JobDetail from './JobDetail';
 import SearchBar from './SearchBar';
+import { Button } from '@/components/ui/button';
 import { jobsData, Job } from '@/data/jobs';
 import { useIsMobile } from '@/hooks/use-mobile';
 
