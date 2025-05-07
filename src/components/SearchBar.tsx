@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search } from 'lucide-react';
@@ -10,6 +10,12 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [searchValue, setSearchValue] = useState('');
+  
+  // Add effect to trigger search as user types
+  useEffect(() => {
+    // Trigger search immediately when search value changes
+    onSearch(searchValue);
+  }, [searchValue, onSearch]);
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

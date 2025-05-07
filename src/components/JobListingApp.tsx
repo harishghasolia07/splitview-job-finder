@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import JobCard from './JobCard';
 import JobDetail from './JobDetail';
@@ -20,7 +21,9 @@ const JobListingApp: React.FC = () => {
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
+    
     if (query.trim() === '') {
+      // If search is empty, show all jobs
       setJobs(jobsData);
       return;
     }
